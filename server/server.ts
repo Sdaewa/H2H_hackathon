@@ -1,10 +1,14 @@
 import * as http from "http";
-import { app } from "./src/app";
+import * as express from "express";
 
-const port = process.env.PORT || 5000;
+require("./src/db/mongoose");
+const app = express();
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const port = process.env.PORT || 5000;
+
+app.use(express.static("public"));
 
 io.on("connection", (socket) => {
   console.log("a user connected");
