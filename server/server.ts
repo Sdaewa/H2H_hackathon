@@ -1,19 +1,9 @@
-import * as http from "http";
-import * as express from "express";
+import { createServer } from "http";
+import { app } from "./src/app";
+import { Server } from "socket.io";
 
-require("./src/db/mongoose");
-const app = express();
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
 const port = process.env.PORT || 5000;
+const server = createServer(app);
+export const io = new Server(server);
 
-app.use(express.static("public"));
-
-io.on("connection", (socket) => {
-  console.log("a user connected");
-});
-
-server.listen(port, () =>
-  console.log(`server is listening on http://localhost:${port}`)
-);
+server.listen(port, () => console.log(`server is listening on http://localhost:${port}`))
