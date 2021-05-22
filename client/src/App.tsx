@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Navbar from "./component/layouts/Navbar";
 import PageNotFound from "./component/pages/PageNotFound";
@@ -10,7 +10,7 @@ const App: React.FC = (): JSX.Element => {
     <>
       <Navbar />
       <Switch>
-          <Route path={"/"} component={Home} exact />
+        <Route path={"/"} component={Home} exact />
         <Route component={PageNotFound} />
       </Switch>
     </>
