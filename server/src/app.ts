@@ -1,5 +1,3 @@
-import express from "express";
+import * as express from "express";
 
 export const app = express;
-
-
