@@ -12,9 +12,10 @@ const App: React.FC = (): JSX.Element => {
       <Navbar />
       <Switch>
         <Route path={"/"} component={Home} exact />
-        <Route path="/educate" component={Educate} exact></Route>
-          <Route path="/communicate" component={Communicate} exact></Route>
-          <Route path="/advocate" component={Advocate} exact></Route>
+            {/*<Route path="/educate" component={Educate} exact></Route>
+        <Route path="/communicate" component={Communicate} exact></Route>
+        <Route path="/advocate" component={Advocate} exact></Route>
+            */}
         <Route component={PageNotFound} />
       </Switch>
     </>
