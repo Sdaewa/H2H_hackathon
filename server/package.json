@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "dev": "nodemon ./server.ts"
+    "dev": "nodemon ./server.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format":"prettier ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
     "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.27.0",
     "nodemon": "^2.0.7",
+    "prettier": "^2.3.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
