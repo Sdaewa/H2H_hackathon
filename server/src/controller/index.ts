@@ -10,9 +10,9 @@ export const handlePostChat = (req: Request, res: Response) => {
 		socket.on("new-user", (msg) => {
 			socket.broadcast.emit("new-user-join", msg);
 		});
-        socket.on("chat-message", (msg) => {
-            socket.broadcast.emit("new-chat-message", msg)
-        })
+		socket.on("chat-message", (msg) => {
+			socket.broadcast.emit("new-chat-message", msg);
+		});
 	});
 	res.redirect("http://localhost:3000/chat");
 };
