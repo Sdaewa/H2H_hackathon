@@ -1,9 +1,12 @@
-import express from "express";
-import passport from "passport";
-import session from "express-session";
+import * as express from "express";
+import * as passport from "passport";
+import * as session from "express-session";
+import {connectDB} from "./controller/services/microservices/db";
 import { router } from "./routes/index";
 
 export const app = express();
+
+connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
