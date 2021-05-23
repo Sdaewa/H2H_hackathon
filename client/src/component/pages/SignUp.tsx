@@ -11,9 +11,24 @@ function SignUp() {
         <div className="form">
           <h1>SignUp</h1>
           <FormControl>
-            <TextField id="standard-basic" label="Email" type="text" />
-            <TextField id="standard-basic" label="Name" type="text" />
-            <TextField id="standard-basic" label="Password" type="password" />
+            <TextField
+              id="standard-basic"
+              label="Email"
+              name="email"
+              type="email"
+            />
+            <TextField
+              id="standard-basic"
+              label="Name"
+              name="name"
+              type="text"
+            />
+            <TextField
+              id="standard-basic"
+              label="Password"
+              name="password"
+              type="password"
+            />
             <Button variant="outlined" color="primary">
               Submit
             </Button>
