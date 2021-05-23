@@ -1,6 +1,7 @@
 import { MyError } from "./error";
+import {saveToDatabase} from "../services/microservices/user"
 
-class MyUser {
+export class MyUser {
 	name: string;
 	email: string;
 	password: string;
@@ -15,4 +16,8 @@ class MyUser {
             errors.add("name can not be less then 3 charectors");
         }
     }
+    save(){
+        saveToDatabase(this.name, this.email, this.password);
+    }
 }
+
