@@ -5,6 +5,9 @@ import Button from "@material-ui/core/Button";
 import { FormControl } from "@material-ui/core";
 
 function SignUp() {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   return (
     <div className="signUp">
       <div className="main">
@@ -14,22 +17,51 @@ function SignUp() {
             <TextField
               id="standard-basic"
               label="Email"
-              name="email"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               id="standard-basic"
               label="Name"
-              name="name"
               type="text"
+              onChange={(e) => setName(e.target.value)}
             />
             <TextField
               id="standard-basic"
               label="Password"
-              name="password"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <Button variant="outlined" color="primary">
+            <Button
+              onClick={() => {
+                (async () => {
+                  try {
+                    const res = await fetch(
+                      "http://localhost:5000/user/signup",
+                      {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                          Accept: "application/json text/plain */*",
+                          "Content-type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          name,
+                          email,
+                          password,
+                        }),
+                      }
+                    );
+                    const data = await res.json();
+                    console.log(data);
+                  } catch (err) {
+                    console.log(err);
+                  }
+                })();
+              }}
+              variant="outlined"
+              color="primary"
+            >
               Submit
             </Button>
           </FormControl>

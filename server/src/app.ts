@@ -3,6 +3,7 @@ import * as passport from "passport";
 import * as session from "express-session";
 import { connectDB } from "./controller/services/microservices/db";
 import { router } from "./routes/index";
+import { userRouter } from "./routes/user";
 import { myPassport } from "./controller/services/microservices/passport";
 
 export const app = express();
@@ -24,6 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", router);
+app.use("/user", userRouter);
 
 app.use((req, res) => {
 	res.json({ msg: "This api does not exit" });
