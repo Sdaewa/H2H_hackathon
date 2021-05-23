@@ -4,6 +4,7 @@ import "./App.scss";
 import Navbar from "./component/layouts/Navbar";
 import PageNotFound from "./component/pages/PageNotFound";
 import Home from "./component/pages/Home";
+import Chat from "./component/pages/Chat";
 
 //App tsx
 const App: React.FC = (): JSX.Element => {
@@ -12,6 +13,7 @@ const App: React.FC = (): JSX.Element => {
       <Navbar />
       <Switch>
         <Route path={"/"} component={Home} exact />
+        <Route path={"/chat"} component={Chat} exact />
             {/*<Route path="/educate" component={Educate} exact></Route>
         <Route path="/communicate" component={Communicate} exact></Route>
         <Route path="/advocate" component={Advocate} exact></Route>

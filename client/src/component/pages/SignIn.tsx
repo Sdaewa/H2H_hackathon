@@ -10,13 +10,11 @@ function SignIn() {
       <div className="main">
         <div className="form">
           <h1>SignIn</h1>
-          <FormControl>
-            <TextField id="standard-basic" label="Email" type="text" />
-            <TextField id="standard-basic" label="Password" type="password" />
-            <Button variant="outlined" color="primary">
-              Submit
-            </Button>
-          </FormControl>
+          <form action="http://localhost:5000/user/signin" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" />
+            <input type="password" name="password" placeholder="Enter your password" />
+            <input type="submit" value="signup" />
+          </form>
         </div>
         <div className="svg">
           <img

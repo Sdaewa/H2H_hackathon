@@ -1,4 +1,5 @@
-import { Request, Response } from "express";
+import * as passport from "passport";
+import { Request, Response, NextFunction } from "express";
 import { MyUser } from "./entity/user";
 
 interface IReqBody {
@@ -14,3 +15,10 @@ export const handleSignUp = (req: Request, res: Response) => {
     newUser.save();
 	res.redirect("http://localhost:3000/");
 };
+
+export const handleLogIn = (req: Request, res: Response, next: NextFunction) => {
+    passport.authenticate("local", {
+        failureRedirect:"http://localhost:3000/",
+        successRedirect:"http://localhost:3000/chat"
+    })(req, res, next)
+}

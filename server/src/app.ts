@@ -36,17 +36,3 @@ app.use((req, res) => {
 	res.json({ msg: "This api does not exit" });
 });
 
-app.use(
-	(
-		err: Error,
-		req: express.Request,
-		res: express.Response,
-		next: express.NextFunction
-	) => {
-		if (err) {
-			res.status(500).json({ msg: "something went wrong" });
-		} else {
-			next();
-		}
-	}
-);
