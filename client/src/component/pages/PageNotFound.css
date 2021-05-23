@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    height: 100vh;
+}
+
+.svg{
+    display: flex;
+    align-items: center;
+    flex: 0.5;
+    margin: 100px;
+}
+
+.para{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0.5;
+}
+
+.para > h1{
+    margin: 20px;
+}
+
+.para > p{
+    font-size: 20px;
+    padding-left: 130px;
+    margin: 30px;
+    margin-right: 100px;
+}
