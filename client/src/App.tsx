@@ -5,6 +5,7 @@ import Navbar from "./component/layouts/Navbar";
 import PageNotFound from "./component/pages/PageNotFound";
 import Home from "./component/pages/Home";
 
+//App tsx
 const App: React.FC = (): JSX.Element => {
   return (
     <>
